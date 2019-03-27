@@ -50,14 +50,14 @@ function Prompter(cz, commit) {
   ]).then(function(answers) {
     const maxLineWidth = 100;
     const wrapOptions = {
-      trim: true,
-      newline: "\n",
+      trim: false,
+      newline: "  ",
       indent: "",
       width: maxLineWidth
     };
     var cModule = answers.module.trim();
     cModule = cModule ? "[" + cModule + "]" : "";
-    var head = (answers.isseuid + cModule + ":" + answers.title.trim()).slice(
+    var head = (answers.isseuid + ":"+ cModule  + answers.title.trim()).slice(
       0,
       maxLineWidth
     );
