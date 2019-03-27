@@ -1,0 +1,26 @@
+{
+  "name": "@tools/cz-jira",
+  "version": "0.0.0",
+  "description": "commitizen jira prompts",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "jira",
+    "commitizen"
+  ],
+  "author": "穆建华",
+  "license": "ISC",
+  "devDependencies":{
+    "commitizen": "2.9.6"
+  },
+  "dependencies":{
+    "word-wrap": "^1.0.3"
+  },
+  "config": {
+    "commitizen" : {
+      "path": "./index.js"
+    }
+  }
+}
