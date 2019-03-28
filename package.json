@@ -2,7 +2,7 @@
   "name": "@galimu/cz-jira",
   "version": "0.0.1",
   "description": "commitizen jira prompts",
-  "main": "index.js",
+  "main": "./src/index.js",
   "scripts": {
     "build": "webpack"
   },
@@ -13,7 +13,6 @@
   "author": "穆建华",
   "license": "ISC",
   "devDependencies": {
-    "commitizen": "2.9.6",
     "eslint": "^5.15.3",
     "eslint-plugin-prettier": "^3.0.1",
     "prettier": "^1.16.4"
@@ -25,10 +24,5 @@
   },
   "files": [
     "src"
-  ],
-  "config": {
-    "commitizen": {
-      "path": "cz-conventional-changelog"
-    }
-  }
+  ]
 }
