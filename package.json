@@ -1,10 +1,10 @@
 {
-  "name": "@tools/cz-jira",
-  "version": "0.0.0",
+  "name": "@galimu/cz-jira",
+  "version": "0.0.1",
   "description": "commitizen jira prompts",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack"
   },
   "keywords": [
     "jira",
@@ -12,15 +12,23 @@
   ],
   "author": "穆建华",
   "license": "ISC",
-  "devDependencies":{
-    "commitizen": "2.9.6"
+  "devDependencies": {
+    "commitizen": "2.9.6",
+    "eslint": "^5.15.3",
+    "eslint-plugin-prettier": "^3.0.1",
+    "prettier": "^1.16.4"
   },
-  "dependencies":{
+  "dependencies": {
+    "jira-client": "^6.7.1",
+    "ora": "^3.2.0",
     "word-wrap": "^1.0.3"
   },
+  "files": [
+    "src"
+  ],
   "config": {
-    "commitizen" : {
-      "path": "./index.js"
+    "commitizen": {
+      "path": "./src/index.js"
     }
   }
 }
