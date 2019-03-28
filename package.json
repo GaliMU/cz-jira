@@ -28,7 +28,7 @@
   ],
   "config": {
     "commitizen": {
-      "path": "./src/index.js"
+      "path": "cz-conventional-changelog"
     }
   }
 }
