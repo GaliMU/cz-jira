@@ -30,3 +30,4 @@ config like this:
 }
 ```
 You are all set! Now cdinto any git repository and use git cz instead of git commit and you will find the commitizen prompt.
+

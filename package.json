@@ -1,6 +1,6 @@
 {
   "name": "@galimu/cz-jira",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "commitizen jira prompts",
   "main": "./src/index.js",
   "scripts": {
@@ -21,6 +21,11 @@
     "jira-client": "^6.7.1",
     "ora": "^3.2.0",
     "word-wrap": "^1.0.3"
+  },
+  "config": {
+    "commitizen": {
+      "path": "src/index"
+    }
   },
   "files": [
     "src"
