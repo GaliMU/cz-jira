@@ -51,13 +51,38 @@ module.exports = {
   prompter: Prompter
 };
 
-async function filter(issues) {
+async function filter() {
   let userInfo = await jira.getCurrentUser();
-  let res = await jira.getUsersIssues(userInfo.name);
-  return res.issues
-    .filter(issue => issue.fields.status.statusCategory.name === "In Progress")
-    .map(iss => ({
-      name: `${iss.key}: ${iss.fields.summary}`,
-      value: `${iss.key}: ${iss.fields.summary}`
-    }));
+  return await getIssues(userInfo);
+}
+
+async function getIssues(userInfo) {
+  let issues = [];
+  let a = true;
+  let startAt = 0;
+  while (a) {
+    let res = await jira.searchJira(
+      `assignee = ${userInfo.name.replace("@", "\\u0040")}`,
+      {
+        startAt,
+        maxResults: 50
+      }
+    );
+    issues = issues.concat(
+      res.issues
+        .filter(
+          issue => issue.fields.status.statusCategory.name === "In Progress"
+        )
+        .map(iss => ({
+          name: `${iss.key}: ${iss.fields.summary}`,
+          value: `${iss.key}: ${iss.fields.summary}`
+        }))
+    );
+    if (res.maxResults + startAt > res.total) {
+      a = false;
+    } else {
+      startAt += res.maxResults;
+    }
+  }
+  return issues;
 }
