@@ -1,5 +1,5 @@
 {
-  "name": "@galimu/cz-jira",
+  "name": "cz-jira",
   "version": "0.0.4",
   "description": "commitizen jira prompts",
   "main": "./src/index.js",

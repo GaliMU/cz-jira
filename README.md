@@ -5,7 +5,7 @@
 Install commitizen and preferred
 
 ```bash
-npm install -g commitizen @galimu/cz-jira
+npm install -g commitizen @sys/cz-jira
 ```
 
 Create a .czrc file in your home directory,with `config` referring to the preferred.
@@ -18,7 +18,7 @@ config like this:
 
 ```json
 {
-  "path": "@galimu/cz-jira",
+  "path": "@sys/cz-jira",
   "jira": {
     "username":"",
     "password":"",
